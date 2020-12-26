@@ -4,6 +4,7 @@ using namespace qstd;
 #include <stdio.h>
 #include "tri.h"
 
+
 int main(){
 
     while(true){
@@ -25,7 +26,7 @@ int main(){
             t.Tri_Insertion();
         }else if(choix_Tri == 4){
             t.Tri_Permutation();
-        }else if(choix_Tri == 'q'){
+        }else if(choix_Tri != 'q'){
             break;
         }
     }
