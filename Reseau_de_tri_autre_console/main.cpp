@@ -28,6 +28,5 @@ int main(){
         }else if(choix_Tri == 'q'){
             break;
         }
-        return 0;
     }
 }
