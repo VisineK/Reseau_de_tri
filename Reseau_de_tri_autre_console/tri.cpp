@@ -145,7 +145,7 @@ void Tri::Tri_Insertion()
     system("clear");
 
     int Tab_Tri[MAX];
-    int d, i;
+    int d, i, j, tmp, choix_Menu;
 
 
     printf("************** Tri par Insertion *************\n\n");
@@ -168,12 +168,29 @@ void Tri::Tri_Insertion()
         printf("%d ", Tab_Tri[i]);
     printf("\n\n");
 
+    /* Tri par Insertion */
+    for(i=0; i < d; i++){
+        tmp = Tab_Tri[i];
+        j = i-1;
+        while(j >= 0 and Tab_Tri[j] > tmp){
+            Tab_Tri[j+1] = Tab_Tri[j];
+            j -= 1;
+        }
+        Tab_Tri[j+1] = tmp;
+    }
 
     /* Affichage du tableau après le tri */
     printf("\nVoici le tableau apres tri : ");
     for (i=0; i<d; i++)
         printf("%d ", Tab_Tri[i]);
     printf("\n\n\n");
+
+    printf("Pour reessayer ? --> 1\nVotre choix : ");
+    scanf("%d", &choix_Menu);
+
+    if(choix_Menu == 1){
+        system("clear");
+    }
 }
 
 
@@ -183,8 +200,7 @@ void Tri::Tri_Permutation()
     system("clear");
 
     int Tab_Tri[MAX];
-    int d, i;
-
+    int d, i, j, tmp, choix_Menu;
 
     printf("************** Tri par Permutation *************\n\n");
 
@@ -207,9 +223,31 @@ void Tri::Tri_Permutation()
     printf("\n\n");
 
 
+    /* Tri par Permutation */
+    int Res[d];
+    for(i=0; i<d; i++){
+        tmp = 0;
+        for(j=0; j<d; j++){
+            if(Tab_Tri[j] < Tab_Tri[i]){
+                tmp ++;
+            }
+        }
+        Res[tmp] = Tab_Tri[i];
+    }
+    for(i=0; i<d; i++){
+        Tab_Tri[i] = Res[i];
+    }
+
     /* Affichage du tableau après le tri */
     printf("\nVoici le tableau apres tri : ");
     for (i=0; i<d; i++)
         printf("%d ", Tab_Tri[i]);
     printf("\n\n\n");
+
+    printf("Pour reessayer ? --> 1\nVotre choix : ");
+    scanf("%d", &choix_Menu);
+
+    if(choix_Menu == 1){
+        system("clear");
+    }
 }
