@@ -13,6 +13,7 @@ int main(){
         printf("*************************** Projet Reseau de Tri ***************************\n\n");
 
         printf("Choisissez le réseau de tri :   1.Tri à bulle        2.Tri par selection \n\t\t\t\t3.Tri par insertion  4.Tri par permutation\n");
+        printf("Ou \"q\" puis \"Entrer\" pour quitter\n\n");
         printf("Votre choix : ");
         scanf("%d", &choix_Tri);
 
@@ -24,7 +25,9 @@ int main(){
             t.Tri_Insertion();
         }else if(choix_Tri == 4){
             t.Tri_Permutation();
+        }else if(choix_Tri == 'q'){
+            break;
         }
+        return 0;
     }
 }
-
